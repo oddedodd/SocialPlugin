@@ -68,11 +68,12 @@ class os_twitterWidget extends WP_Widget {
         
         $tweets = get_transient('os_recent_tweet');
         
-        if(!$tweets || $tweets->username !== $username || $tweets->tweet_count !== $tweet_count){
+        if(empty($tweets) || $tweets->username !== $username || $tweets->tweet_count !== $tweet_count){
             return $this->fetch_tweets($tweet_count, $username);   
+        } else {
+            return $tweets;
         }// end if
         
-        return $tweets;
     }// end function
     
     private function fetch_tweets($tweet_count, $username){
@@ -96,8 +97,9 @@ class os_twitterWidget extends WP_Widget {
             $data->tweets[] = $this->filter_tweet($tweet->text);
         }// end foreach
         
-        set_transient('os_recent_tweet', $data, 60 * 5);
+        set_transient('os_recent_tweet', $data, 60*15);
         
+        return $data;
     }// end function
     
     private function filter_tweet($tweet){

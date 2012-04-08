@@ -10,10 +10,12 @@ Author URI: http://dev.odde.org
 */
 
 // include the twitter shortcode stuff
-include 'os_twitterShortcode.php';
+include 'includes/os_twitterShortcode.php';
 
-// include the twitter sidebar and footer widget
-include 'os_twitterWidget.php';
+// include the twitter widget
+include 'includes/os_twitterWidget.php';
      
+// include the facebook widget
+include 'includes/os_facebookWidget.php';
 
 ?>
