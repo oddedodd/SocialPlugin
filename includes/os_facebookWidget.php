@@ -21,6 +21,7 @@ Class os_facebookWidget extends WP_Widget {
         public function form($userInput) {
             
             extract($userInput);
+            echo $os_border_color;
             ?>
             <p>
                 <label for="<?php echo $this->get_field_id('title'); ?>">Title: </label>
@@ -35,8 +36,19 @@ Class os_facebookWidget extends WP_Widget {
                 <input type="number" class="widefat" style="width: 40px" id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" value="<?php if(isset($width)){ echo esc_attr($width); } ?>" /> px
             </p>
             <p>
-                <label for="">Height: </label>
+                <label for="<?php echo $this->get_field_id('height'); ?>">Height: </label>
                 <input type="number" class="widefat" style="width: 40px" id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" value="<?php if(isset($height)){ echo esc_attr($height); } ?>" /> px
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id('color_scheme'); ?>">Color scheme: </label>
+                <select class="widefat" id="<?php echo $this->get_field_id('color_scheme'); ?>" name="<?php echo $this->get_field_name('color_scheme'); ?>">
+                    <option value="light" <?php selected($color_scheme,"light") ?>>light</option>
+                    <option value="dark" <?php selected($color_scheme,"dark"); ?>>dark</option>
+                </select>
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id('os_border_color'); ?>">Border color: </label>
+                <input type="text" class="widefat" id="<?php echo $this->get_field_id('os_border_color'); ?>" name="<?php echo $this->get_field_name('os_border_color'); ?>" value="<?php if(isset($os_border_color)){ echo esc_attr($os_border_color); } ?>" />
             </p>
             <p>
                 <label for="<?php echo $this->get_field_id('show_faces'); ?>">Show faces: </label>
@@ -80,7 +92,7 @@ Class os_facebookWidget extends WP_Widget {
                 $title = "Follow me on Facebook";
             }// end if
             
-            $facebook_iframe = "<iframe src='//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F$username&amp;width=$width&amp;height=$height&amp;colorscheme=light&amp;show_faces=$show_faces&amp;border_color&amp;stream=$show_stream&amp;header=$show_header' scrolling='no' frameborder='0' style='border:none; overflow:hidden; width:".$width."px; height:".$height."px;' allowTransparency='true'></iframe>";
+            $facebook_iframe = "<iframe src='//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F$username&amp;width=$width&amp;height=$height&amp;colorscheme=$color_scheme&amp;show_faces=$show_faces&amp;border_color=$os_border_color&amp;stream=$show_stream&amp;header=$show_header' scrolling='no' frameborder='0' style='border:none; overflow:hidden; width:".$width."px; height:".$height."px;' allowTransparency='true'></iframe>";
             
             echo $before_widget;
                 echo $before_title;

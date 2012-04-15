@@ -10,6 +10,8 @@ add_shortcode('twitter', function($atts, $content){
 		), $atts
 	);
 	extract($atts);
+        
+        $tweets = "";
     
 	if($show_tweets){    
 		$tweets = fetch_tweets($num_tweets, $username, $tweet_reset_time);
