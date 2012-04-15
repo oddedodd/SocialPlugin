@@ -21,7 +21,6 @@ Class os_facebookWidget extends WP_Widget {
         public function form($userInput) {
             
             extract($userInput);
-            echo $os_border_color;
             ?>
             <p>
                 <label for="<?php echo $this->get_field_id('title'); ?>">Title: </label>
@@ -50,6 +49,7 @@ Class os_facebookWidget extends WP_Widget {
                 <label for="<?php echo $this->get_field_id('os_border_color'); ?>">Border color: </label>
                 <input type="text" class="widefat" id="<?php echo $this->get_field_id('os_border_color'); ?>" name="<?php echo $this->get_field_name('os_border_color'); ?>" value="<?php if(isset($os_border_color)){ echo esc_attr($os_border_color); } ?>" />
             </p>
+            <p class="os_widget_info">Only use hexcode without the leading #</p>
             <p>
                 <label for="<?php echo $this->get_field_id('show_faces'); ?>">Show faces: </label>
                 <input type="checkbox" id="<?php echo $this->get_field_id('show_faces'); ?>" name="<?php echo $this->get_field_name('show_faces'); ?>" <?php if(isset($show_faces)){ echo "checked"; } ?> />
@@ -92,7 +92,7 @@ Class os_facebookWidget extends WP_Widget {
                 $title = "Follow me on Facebook";
             }// end if
             
-            $facebook_iframe = "<iframe src='//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F$username&amp;width=$width&amp;height=$height&amp;colorscheme=$color_scheme&amp;show_faces=$show_faces&amp;border_color=$os_border_color&amp;stream=$show_stream&amp;header=$show_header' scrolling='no' frameborder='0' style='border:none; overflow:hidden; width:".$width."px; height:".$height."px;' allowTransparency='true'></iframe>";
+            $facebook_iframe = "<iframe src='//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F$username&amp;width=$width&amp;height=$height&amp;colorscheme=$color_scheme&amp;show_faces=$show_faces&amp;border_color=%23".$os_border_color."&amp;stream=$show_stream&amp;header=$show_header' scrolling='no' frameborder='0' style='border:none; overflow:hidden; width:".$width."px; height:".$height."px;' allowTransparency='true'></iframe>";
             
             echo $before_widget;
                 echo $before_title;
