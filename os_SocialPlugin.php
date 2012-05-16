@@ -9,16 +9,19 @@ Author: Odd Egil Hegge Selnes
 Author URI: http://dev.odde.org
 */
 
-// include the twitter shortcode stuff
-include 'includes/os_twitterShortcode.php';
+// require the twitter shortcode stuff
+require 'includes/os_twitterShortcode.php';
 
-// include the shortcode //
-include 'includes/os_shortcodes.php';
+// require the shortcode //
+require 'includes/os_shortcodes.php';
 
-// include the twitter widget
-include 'includes/os_twitterWidget.php';
+// require the twitter widget
+require 'includes/os_twitterWidget.php';
      
-// include the facebook widget
-include 'includes/os_facebookWidget.php';
+// require the facebook widget
+require 'includes/os_facebookWidget.php';
+
+// INSTAGRAM SHORTCODE 
+require 'includes/os_instagramShortcode.php';
 
 ?>

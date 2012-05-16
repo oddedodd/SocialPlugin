@@ -62,6 +62,7 @@ Class os_facebookWidget extends WP_Widget {
                 <label for="">Show header: </label>
                 <input type="checkbox" id="<?php echo $this->get_field_id('show_header'); ?>" name="<?php echo $this->get_field_name('show_header'); ?>" <?php if(isset($show_header)){ echo "checked"; } ?> />
             </p>
+            <p class="os_widget_info">If you choose to display both faces and stream you need to set enough height.</p>
             <?php
             
         }// end function

@@ -1,0 +1,11 @@
+#instagram-feed {
+	background: red;
+	margin: 0;
+	padding: 20px;	
+}
+
+#instagram-feed ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;	
+}
