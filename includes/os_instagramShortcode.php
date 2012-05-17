@@ -4,6 +4,8 @@
 Wordpress Short tag to view instagram images
 (c) Odd Egil Hegge Selnes // post@odde.org
 You are free to use this code as you wish - you don't even have to credit me :-)
+
+17. May 2012 - Hooray!
 */
 
 add_shortcode('instagram', function($atts) {
@@ -50,7 +52,7 @@ add_shortcode('instagram', function($atts) {
 				// exits loop when desired number of pictures are displayed... (default is 5) //
 				if($i == $insta_num_pics){
 					break;
-				}// 
+				}// end if 
 			}// end foreach							 
 			echo "</ul>";
 			echo "</div>"; 
