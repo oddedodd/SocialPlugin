@@ -18,8 +18,6 @@ add_shortcode('instagram', function($atts) {
 	);
 	
 	extract($atts);
-	// includes som custom styles... //
-	
 	
 	// includes the wordpress class if it's not already available... //
 	if(!class_exists('WP_Http')){
