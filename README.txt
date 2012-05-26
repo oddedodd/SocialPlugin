@@ -2,6 +2,8 @@ Social Plugin for wordpress
 
 By Odd Egil H. Selnes
 
+- 26.05.2012 - Added some css to display images better
+
 This plugin now supports:
 - Twitter and Facebook widgets
 - Instagram and Twitter Short codes

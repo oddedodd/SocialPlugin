@@ -12,7 +12,7 @@ add_shortcode('instagram', function($atts) {
 	$atts = shortcode_atts(
 		array(
 			'tag' 				=> 'tmpnorge',
-			'insta_num_pics' 	=> 5,
+			'insta_num_pics' 	=> 12,
 			'insta_pic_width'	=> ''
 		), $atts
 	);
@@ -58,12 +58,12 @@ add_shortcode('instagram', function($atts) {
 			</script>
 			<?php
 			echo "<div id='instagram-feed'>";
-			echo "<ul class='instagram-feed' data-tag='$tag' data-qty='$count'>";
+			echo "<ul class='instagram-album' data-tag='$tag' data-qty='$count'>";
 			foreach($xml->channel->item as $item) {
-				echo "<li><a href='$item->link' class='fancybox' rel='group' title='$item->title'><img src='$item->link' alt='$item->title' width='$insta_pic_width' /></a></li>";
-				echo "<li>$item->pubDate</li>";
-				echo "<li>$item->title</li>";
-				echo "<li>&nbsp;</li>";
+				echo "<li>";
+				echo "<a href='$item->link' class='fancybox' rel='group' title='$item->title'><img src='$item->link' alt='$item->title' /></a>";
+				//echo "<span style='font-size: 12px; text-align: center;'>$item->pubDate</span>"; // $item->title
+				echo "</li>";
 				$i++;
 				
 				// exits loop when desired number of pictures are displayed... (default is 5) //

@@ -1,12 +1,81 @@
 #instagram-feed {
-	background: red;
+	background: #f5f1e8;
 	margin: 0;
-	padding: 20px;	
 }
 
-#instagram-feed ul {
-	display: inline;
-	list-style: none;
-	margin: 0;
-	padding: 0;
+.instagram-album {
+	width: 800px;
+	margin: 0 auto;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 }
+
+.instagram-album li {
+	float: left;
+	position: relative;
+	list-style: none;
+	margin: 5px;
+}
+
+.instagram-album li > a,
+.instagram-album li > a img {
+	display: block;
+}
+
+.instagram-album li > a {
+	width: 150px;
+	height: 150px;
+	position: relative;
+	padding: 10px;
+	background: #f1d2c2;
+	box-shadow: 1px 1px 2px #fff, 1px 1px 2px rgba(158, 111, 85, 0.3) inset;
+	border-radius: 4px;
+}
+
+.instagram-album li > a:hover {
+	-webkit-transition: opacity 1 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
