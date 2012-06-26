@@ -72,6 +72,7 @@ add_shortcode('instagram', function($atts) {
 				}// end if 
 			}// end foreach			 
 			echo "</ul>";
+			echo "<div class='clearfloat'></div>";
 			echo "</div>";
 		} else {
 			echo "<!-- No results found for feed $tag -->";

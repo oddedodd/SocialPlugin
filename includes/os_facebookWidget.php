@@ -19,6 +19,8 @@ Class os_facebookWidget extends WP_Widget {
     
 
         public function form($userInput) {
+
+            $color_scheme  = "";
             
             extract($userInput);
             ?>
@@ -41,6 +43,7 @@ Class os_facebookWidget extends WP_Widget {
             <p>
                 <label for="<?php echo $this->get_field_id('color_scheme'); ?>">Color scheme: </label>
                 <select class="widefat" id="<?php echo $this->get_field_id('color_scheme'); ?>" name="<?php echo $this->get_field_name('color_scheme'); ?>">
+                    <option>Choose color scheme:</option>
                     <option value="light" <?php selected($color_scheme,"light") ?>>light</option>
                     <option value="dark" <?php selected($color_scheme,"dark"); ?>>dark</option>
                 </select>
@@ -78,7 +81,7 @@ Class os_facebookWidget extends WP_Widget {
             } // end if
             
             if(isset($show_stream) == "on"){
-                $show_stream = "true";
+                $show_stream = "true&force_wall=true;";
             } else {
                 $show_stream = "false"; 
             } // end if
